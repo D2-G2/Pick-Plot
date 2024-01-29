@@ -1,30 +1,72 @@
-# React + TypeScript + Vite
+# Pick!Plot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+본 README.md 파일은 PickPlot 프로젝트의 주요 내용과 목표를 소개하기 위해 작성되었습니다.
 
-Currently, two official plugins are available:
+## 소개
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pick!Plot은 사용자에게 최신, 인기, 장르별 영화 목록을 제공하고, 개인화된 영화 추천 기능을 통해 사용자 경험을 향상시키는 웹 플랫폼입니다. 사용자 리뷰 및 평점 기능을 통해 커뮤니티 구축과 사용자 참여를 증진시키는 것을 목표로 합니다.
 
-## Expanding the ESLint configuration
+Pick!Plot을 통해 영화에 대한 깊이 있는 정보를 제공하고, 사용자 간의 상호작용을 촉진시키며, 영화 선택의 고민을 해결해드리겠습니다. 지금 바로 Pick!Plot을 경험해보세요!
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 주요 기능
 
-- Configure the top-level `parserOptions` property like this:
+- **영화 검색**: 제목, 장르, 연도 등으로 필터링 가능한 영화 검색 기능
+- **영화 상세 정보 조회**: 개요, 출연진, 평점 등 영화에 대한 상세 정보 제공
+- **사용자 맞춤 영화 추천**: 사용자의 취향과 관심사에 맞춘 영화 추천
+- **사용자 리뷰 및 평점**: 사용자가 영화에 대한 리뷰를 작성하고 평점을 매길 수 있는 기능
+- **사용자 계정 관리**: 사용자의 개인정보 보호와 맞춤형 서비스 제공을 위한 계정 관리 시스템
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## 기술 스택
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **프론트 엔드**
+  - 프레임워크: React
+  - 상태 관리: Redux
+  - 라우팅: React Router
+  - UI 라이브러리: Tailwind CSS
+  - HTTP 클라이언트: axios
+- **백엔드**
+  - 서버: Node.js
+  - DB: MariaDB
+
+## UI/UX 디자인
+
+PickPlot은 사용자 경험을 최우선으로 고려하여 다음과 같은 UI/UX 디자인 원칙을 적용했습니다:
+
+- **레이아웃 계획**: 홈페이지, 검색 결과 페이지, 영화 상세 페이지, 사용자 프로필 페이지 등 다양한 페이지 레이아웃 설계
+- **직관적인 네비게이션**: 사용자 친화적인 네비게이션 시스템 구현
+- **일관된 디자인 요소**: 색상 팔레트, 타이포그래피, 아이콘 등 일관된 디자인 시스템 적용
+
+## 개발 로드맵
+
+PickPlot 개발은 다음과 같은 단계로 진행됩니다:
+
+1. **초기 개발**: 기본 프레임워크 설정, API 통합, 주요 페이지 레이아웃 구현
+2. **중간 개발**: 상세 기능 개발, 데이터 연동, 사용자 인터페이스 개선
+3. **최종 개발**: 사용자 피드백을 기반으로 한 기능 개선, 최종 테스팅 및 디버깅
+
+각 개발 단계별로 명확한 마일스톤을 설정하여 프로젝트 진행 상황을 체계적으로 관리합니다.
+
+## 페이지별 요구사항
+
+- **홈페이지**
+  - 네비게이션 바, 메인 배너, 영화 섹션, 푸터 등 사용자가 필요한 정보와 기능에 쉽게 접근할 수 있도록 설계
+- **영화 검색 결과 페이지**
+
+  - 효율적인 검색 기능과 검색 결과의 명확한 표시로 사용자가 원하는 영화를 쉽게 찾을 수 있도록 구현
+
+- **영화 상세 정보 페이지**
+  - 영화의 상세 정보, 출연진 목록, 리뷰 및 평점 기능, 관련 영화 추천 등 영화에 대한 모든 정보를 제공하여 사용자의 만족도를 높임
+
+---
+
+**본 프로젝트는 깊이 있는 영화 정보 제공과 사용자 경험 개선을 위해 지속적으로 발전하고 있습니다. 여러분의 소중한 피드백을 기다리고 있습니다!**
+
+---
+
+**프로젝트 개발자: [송문석(D2G2)](https://github.com/D2-G2)**
+
+**문의: song3392@gmail.com**
+
+---
+
+**copyright © 2024 Munseok Song. All rights reserved.**
