@@ -1,5 +1,7 @@
 # Pick!Plot
 
+![cover](/public/logo_bg_white.png)
+
 본 README.md 파일은 PickPlot 프로젝트의 주요 내용과 목표를 소개하기 위해 작성되었습니다.
 
 ## 소개
