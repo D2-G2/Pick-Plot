@@ -19,8 +19,8 @@ export default function SearchBar() {
         value={search}
         onChange={onChangeSearch}
         onKeyDown={onKeyDownSearch}
-        className=" rounded-lg border-2 border-gray-300 bg-white h-7 w-60 px-2 text-xs  focus:outline-none"
-        placeholder="오늘은 어떤 영화를 보고 싶으세요?"
+        className=" rounded-lg border-2 border-blue-300 bg-white h-7 w-60 px-2 text-xs  focus:outline-none"
+        placeholder="오늘은 어떤 영화가 보고 싶으세요?"
       />
     </div>
   );

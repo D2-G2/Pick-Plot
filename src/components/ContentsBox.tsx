@@ -3,6 +3,7 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 interface ContentBoxProps {
   title: string;
+  url: string;
 }
 
 interface Content {
@@ -11,7 +12,7 @@ interface Content {
   poster_path: string;
 }
 
-export default function ContentsBox({ title }: ContentBoxProps) {
+export default function ContentsBox({ title, url }: ContentBoxProps) {
   const [contents, setContents] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
 
@@ -26,7 +27,7 @@ export default function ContentsBox({ title }: ContentBoxProps) {
   };
 
   useEffect(() => {
-    fetch('https://api.themoviedb.org/3/movie/popular?api_key=14e87cdd982ab893bf2ec332b64c606e&language=ko-KR')
+    fetch(url)
       .then((res) => res.json())
       .then((json) => setContents(json.results))
       .catch((err) => console.error('error:' + err));
@@ -35,7 +36,7 @@ export default function ContentsBox({ title }: ContentBoxProps) {
   return (
     <div className="p-5 m-5 relative">
       <h2 className=" font-semibold">{title}</h2>
-      <div className="my-2 flex justify-between p-3 bg-slate-100 bg-opacity-80 rounded-xl">
+      <div className="my-2 flex justify-between p-3 bg-slate-100 bg-opacity-80 rounded-xl shadow-2xl">
         {startIndex > 0 && (
           <button
             onClick={prevContents}
@@ -46,10 +47,14 @@ export default function ContentsBox({ title }: ContentBoxProps) {
         )}
         {contents.slice(startIndex, startIndex + 5).map((content: Content) => (
           <div key={content.id}>
-            <div className="text-center m-2">{content.title}</div>
+            <div className="text-center m-2 overflow-hidden font-medium">{content.title}</div>
             <div className=" mx-2 justify-center">
               {/* image */}
-              <img src={`https://image.tmdb.org/t/p/w500${content.poster_path}`} alt={content.title} />
+              <img
+                src={`https://image.tmdb.org/t/p/w500${content.poster_path}`}
+                alt={content.title}
+                className=" object-fill h-32 md:h-48 lg:h-64 max-w-full rounded-lg hover:opacity-80 transition duration-300 ease-in-out cursor-pointer shadow-2xl"
+              />
             </div>
           </div>
         ))}
