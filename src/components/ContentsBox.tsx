@@ -10,6 +10,7 @@ interface Content {
   id: number;
   title: string;
   poster_path: string;
+  vote_average: number;
 }
 
 export default function ContentsBox({ title, url }: ContentBoxProps) {
@@ -46,15 +47,18 @@ export default function ContentsBox({ title, url }: ContentBoxProps) {
           </button>
         )}
         {contents.slice(startIndex, startIndex + 5).map((content: Content) => (
-          <div key={content.id}>
-            <div className="text-center m-2 overflow-hidden font-medium">{content.title}</div>
+          <div key={content.id} className=" w-48">
+            <div className="text-center m-2 overflow-hidden font-medium truncate">{content.title}</div>
             <div className=" mx-2 justify-center">
               {/* image */}
               <img
                 src={`https://image.tmdb.org/t/p/w500${content.poster_path}`}
                 alt={content.title}
-                className=" object-fill h-32 md:h-48 lg:h-64 max-w-full rounded-lg hover:opacity-80 transition duration-300 ease-in-out cursor-pointer shadow-2xl"
+                className=" object-fill h-32 md:h-48 lg:h-64 max-w-full rounded-lg hover:opacity-80 transition duration-300 ease-in-out cursor-pointer shadow-md"
               />
+            </div>
+            <div className="p-2 text-sm text-center">
+              <span className="font-medium">⭐️ {content.vote_average.toFixed(1)}</span>
             </div>
           </div>
         ))}
