@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Browse from './pages/Browse';
 import Collection from './pages/Collection';
 import Community from './pages/Community';
+import MovieDetail from './pages/MovieDetail';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/browse" element={<Browse />} />
           <Route path="Collection" element={<Collection />} />
           <Route path="community" element={<Community />} />
+          <Route path="movie/:id" element={<MovieDetail />} />
         </Routes>
       </div>
     </BrowserRouter>

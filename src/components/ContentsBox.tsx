@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 interface ContentBoxProps {
   title: string;
@@ -50,12 +51,14 @@ export default function ContentsBox({ title, url }: ContentBoxProps) {
           <div key={content.id} className=" w-48">
             <div className="text-center m-2 overflow-hidden font-medium truncate">{content.title}</div>
             <div className=" mx-2 justify-center">
-              {/* image */}
-              <img
-                src={`https://image.tmdb.org/t/p/w500${content.poster_path}`}
-                alt={content.title}
-                className=" object-fill h-32 md:h-48 lg:h-64 max-w-full rounded-lg hover:opacity-80 transition duration-300 ease-in-out cursor-pointer shadow-md"
-              />
+              <Link to={`/movie/${content.id}`}>
+                {/* image */}
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${content.poster_path}`}
+                  alt={content.title}
+                  className=" object-fill h-32 md:h-48 lg:h-64 max-w-full rounded-lg hover:opacity-80 transition duration-300 ease-in-out cursor-pointer shadow-md"
+                />
+              </Link>
             </div>
             <div className="p-2 text-sm text-center">
               <span className="font-medium">⭐️ {content.vote_average.toFixed(1)}</span>
